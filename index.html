@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
+    <script src="js/btn_top.js"></script>
+    <script language="JavaScript" src="js/gen_validatorv31.js" type="text/javascript"></script>
+
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/ahmedfaid-style.css">
 
@@ -310,7 +313,7 @@
                     <div class="contact-form">
                         <h2 class="mb-4">Interested to work together? Let's talk</h2>
 
-                        <form action="" method="get">
+                        <form action="contact-form-handler.php" method="post" name="contact_form">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <input type="text" class="form-control" name="name" placeholder="Your Name"
@@ -326,6 +329,14 @@
                                     <textarea name="message" rows="6" class="form-control" id="message"
                                         placeholder="Message"></textarea>
                                 </div>
+
+                                <script language="JavaScript">
+                                    var frmvalidator  = new Validator("contact_form");
+                                    frmvalidator.addValidation("name","req","Please provide your name");
+                                    frmvalidator.addValidation("email","req","Please provide your email");
+                                    frmvalidator.addValidation("email","email", "Please enter a valid email address");
+                                    frmvalidator.addValidation("message","req", "Please enter a message");
+                                </script>
 
                                 <div class="ml-lg-auto col-lg-5 col-12">
                                     <input type="submit" class="form-control submit-btn" value="Send">
