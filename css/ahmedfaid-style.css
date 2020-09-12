@@ -77,9 +77,12 @@ a:hover {
 
 .navbar-brand .logo {
   border-radius: 100%;
+  border: #F9A826 1px solid;
   height: 80px;
 }
-
+.navbar-brand .logo:hover {
+  transform: rotateZ(20deg);
+}
 p {
   font-size: 18px;
   font-weight: 300;
