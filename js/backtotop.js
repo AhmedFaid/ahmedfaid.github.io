@@ -12,7 +12,7 @@ jQuery(function ($) {
     $window.on('scroll', function () {
       clearTimeout(scrollTimer);
       scrollTimer = setTimeout(function() {
-       if ($window.scrollTop() > 100) {
+       if ($window.scrollTop() > 50) {
           $buttonTop.addClass('button-top-visible');
         } else {
           $buttonTop.removeClass('button-top-visible');
