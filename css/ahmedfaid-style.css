@@ -2,6 +2,7 @@
 body {
   font-family: "Maven Pro", sans-serif;
   padding-top: 70px;
+  background-color: #eee;
 }
 
 .full-screen {
@@ -36,18 +37,19 @@ body {
 }
 .button-top:hover{
   cursor: pointer;
+  background-color: #333;
 }
 .button-top:active{
   background-color: #555;
 }
 .button-top-visible {
   opacity: 1;
-  pointer-events: auto;
+  /* pointer-events: auto; */
   visibility: visible;
 }
 
 .small-text {
-  color: #5b5b5b;
+  color: #989898;
   font-size: 14px;
   font-weight: bold;
   padding: 8px 16px;
@@ -65,8 +67,9 @@ ul li {
 
 a {
   font-weight: normal;
-  text-decoration: none !important;
+  text-decoration: underline !important;
   transition: all 0.4s ease;
+  color: inherit;
 }
 a:hover {
   color: #ffc200 !important;
@@ -83,7 +86,9 @@ p {
   line-height: 1.5;
   color: #5b5b5b;
 }
-
+.dark-mode p{
+  color: #999;
+}
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   letter-spacing: -1px;
@@ -111,7 +116,7 @@ b, strong {
 }
 
 .custom-btn {
-  background: #eee;
+  background: #d0d0d0;
   color: #5b5b5b;
   font-weight: bold;
   border-radius: 50px;
@@ -320,7 +325,7 @@ b, strong {
 }
 
 .dark-mode {
-  background: #0c0c0d;
+  background: #333333;
 }
 .dark-mode .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.8);
@@ -375,7 +380,7 @@ b, strong {
 }
 .timeline-yr span {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   display: block;
   line-height: 75px;
@@ -394,6 +399,10 @@ b, strong {
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;
+}
+
+.dark-mode .timeline-info small {
+  color: #928fac;
 }
 
 .owl-carousel .owl-nav span {
