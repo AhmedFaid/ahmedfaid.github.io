@@ -313,7 +313,7 @@
                     <div class="contact-form">
                         <h2 class="mb-4">Interested to work together? Let's talk</h2>
 
-                        <form id="contactus_form" action="contact-form-handler.php" method="post" name="contact_form">
+                        <form id="contactus_form" action="contact-form-handler.php" method="post" name="contactusform">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <input type="text" class="form-control" name="name" placeholder="Your Name"
@@ -328,7 +328,7 @@
                                         placeholder="Message"></textarea>
                                 </div>
                                 <script language="JavaScript">
-                                    var frmvalidator  = new Validator("contactus_form");
+                                    var frmvalidator  = new Validator("contactusform");
                                     frmvalidator.addValidation("name","req","Please provide your name");
                                     frmvalidator.addValidation("email","req","Please provide your email");
                                     frmvalidator.addValidation("email","email", "Please enter a valid email address");
