@@ -16,6 +16,9 @@
     	items: 1,
 	    loop:true,
 	    margin:10,
+      autoplay:true,
+      autoplayTimeout:4000,
+      autoplayHoverPause:true,
 	    nav:true
 	});
 
@@ -28,7 +31,7 @@
         }, 1000);
         event.preventDefault();
       });
-    });  
+    });
 
     // TOOLTIP
     $('.social-links a').tooltip();
