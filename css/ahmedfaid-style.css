@@ -8,6 +8,44 @@ body {
   padding: 8rem 0;
 }
 
+/* Back to top Button */
+.button-top {
+  display: inline-block;
+  border: #F9A826 1px solid;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.button-top::after{
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+.button-top:hover{
+  cursor: pointer;
+}
+.button-top:active{
+  background-color: #555;
+}
+.button-top-visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
 .small-text {
   color: #5b5b5b;
   font-size: 14px;
