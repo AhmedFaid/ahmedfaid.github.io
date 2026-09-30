@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Ahmed Usama Faid">
+    <title>Post | Ahmed Faid</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/unicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/ahmedfaid-style.css">
+    <script src="../js/backtotop.js"></script>
+
+    <!-- Syntax Highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+    <style>
+        .post-body {
+            font-size: 1.15rem;
+            line-height: 1.85;
+        }
+        .post-body h1, .post-body h2, .post-body h3 {
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .post-body pre {
+            border-radius: 8px;
+            padding: 18px;
+            margin: 25px 0;
+            background: #2d2d2d;
+        }
+        .post-body blockquote {
+            border-left: 4px solid #f9a826;
+            padding-left: 1rem;
+            font-style: italic;
+            opacity: 0.85;
+            margin: 20px 0;
+        }
+        .post-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img class="logo" src="../images/undraw/image01.jpg" alt="Ahmed Usama Faid" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="../index.html#about" class="nav-link"><span data-hover="About">About</span></a></li>
+                    <li class="nav-item"><a href="../index.html#project" class="nav-link"><span data-hover="Projects">Projects</span></a></li>
+                    <li class="nav-item"><a href="../index.html#resume" class="nav-link"><span data-hover="Resume">Resume</span></a></li>
+                    <li class="nav-item active"><a href="index.html" class="nav-link"><span data-hover="Blog">Blog</span></a></li>
+                    <li class="nav-item"><a href="../index.html#contact" class="nav-link"><span data-hover="Contact Me">Contact Me</span></a></li>
+                </ul>
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <div class="ml-lg-4">
+                        <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                            <i class="color-mode-icon"></i>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- POST CONTENT -->
+    <article class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-auto">
+                    <a href="index.html" class="d-inline-block mb-4 font-weight-bold" style="color: #f9a826;">&larr; Back to all articles</a>
+                    <div id="content" class="post-body">
+                        <p class="text-center text-muted">Loading article...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="copyright-text text-center">Copyright &copy; Eng. Ahmed Osama Faid . All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="button-top" id="buttontop" title="Go to top"></button>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Headroom.js"></script>
+    <script src="../js/jQuery.headroom.js"></script>
+    <script src="../js/custom.js"></script>
+
+    <!-- Marked & Prism CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const articleSlug = params.get('article');
+
+        if (!articleSlug) {
+            document.getElementById('content').innerHTML = `<h3>Article not found</h3><p><a href="index.html">Return to blog list</a></p>`;
+        } else {
+            fetch(`posts/${articleSlug}.md`)
+                .then(response => {
+                    if (!response.ok) throw new Error('File not found');
+                    return response.text();
+                })
+                .then(markdown => {
+                    document.getElementById('content').innerHTML = marked.parse(markdown);
+                    Prism.highlightAll(); // highlights any ```python or ```javascript blocks
+                })
+                .catch(err => {
+                    document.getElementById('content').innerHTML = `<h3>Unable to load article</h3><p>Make sure <code>posts/${articleSlug}.md</code> exists.</p>`;
+                });
+        }
+    </script>
+</body>
+</html>

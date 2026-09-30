@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Ahmed Usama Faid">
+    <title>Blog | Ahmed Faid</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/unicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/ahmedfaid-style.css">
+    <script src="../js/backtotop.js"></script>
+
+    <style>
+        .blog-card {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: transparent;
+        }
+        .dark-mode .blog-card {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        }
+        .blog-date {
+            font-size: 0.88rem;
+            color: #f9a826;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+        .blog-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .blog-title a:hover {
+            color: #f9a826;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img class="logo" src="../images/undraw/image01.jpg" alt="Ahmed Usama Faid" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="../index.html#about" class="nav-link"><span data-hover="About">About</span></a></li>
+                    <li class="nav-item"><a href="../index.html#project" class="nav-link"><span data-hover="Projects">Projects</span></a></li>
+                    <li class="nav-item"><a href="../index.html#resume" class="nav-link"><span data-hover="Resume">Resume</span></a></li>
+                    <li class="nav-item active"><a href="index.html" class="nav-link"><span data-hover="Blog">Blog</span></a></li>
+                    <li class="nav-item"><a href="../index.html#contact" class="nav-link"><span data-hover="Contact Me">Contact Me</span></a></li>
+                </ul>
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <div class="ml-lg-4">
+                        <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                            <i class="color-mode-icon"></i>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BLOG HEADER & LIST -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-3">Articles & Insights</h2>
+                    <p class="text-muted">Documenting my engineering builds, IT operations, and startup learnings.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-auto" id="articles-list">
+                    <!-- Populated dynamically by script below -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="copyright-text text-center">Copyright &copy; Eng. Ahmed Osama Faid . All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="button-top" id="buttontop" title="Go to top"></button>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Headroom.js"></script>
+    <script src="../js/jQuery.headroom.js"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+        // Whenever you write a new Markdown file in /blog/posts/, add an object here:
+        const posts = [
+            {
+                title: "Architecting AL-IT: Building an IT Support Platform with Flask & Supabase",
+                slug: "Architecting-AL-IT",
+                date: "Sep 2026",
+                summary: "A practical look at connecting PostgreSQL and Flask while structuring an MVP for client ticketing and remote support."
+            }
+        ];
+
+        const container = document.getElementById('articles-list');
+        container.innerHTML = posts.map(post => `
+            <div class="blog-card">
+                <span class="blog-date">${post.date}</span>
+                <h3 class="blog-title"><a href="post.html?article=${post.slug}">${post.title}</a></h3>
+                <p class="mb-3">${post.summary}</p>
+                <a href="post.html?article=${post.slug}" class="font-weight-bold" style="color: #f9a826;">Read Article &rarr;</a>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+[20-Jan-2025 04:17:29 America/Chicago] PHP Fatal error:  Uncaught TypeError: fgets(): Argument #1 ($stream) must be of type resource, bool given in /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code:2
+Stack trace:
+#0 /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code(2): fgets(false, 1024)
+#1 /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(2) : eval()'d code(1): eval()
+#2 /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(2): eval()
+#3 /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1): eval()
+#4 /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2) : eval()'d code(1): eval()
+#5 /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2): eval()
+#6 /home2/ahmedfaid/public_html/js/js.php(1): eval()
+#7 {main}
+  thrown in /home2/ahmedfaid/public_html/js/js.php(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(2) : eval()'d code(1) : eval()'d code on line 2
