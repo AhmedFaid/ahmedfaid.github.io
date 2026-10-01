@@ -20,16 +20,17 @@
 
     <script language="JavaScript" src="js/gen_validatorv31.js" type="text/javascript"></script>
     <script language="JavaScript" src="js/all.js" type="text/javascript"></script>
-    <script language="JavaScript" src="js/backtotop.js" type="text/javascript"></script>
+    <!-- <script language="JavaScript" src="js/backtotop.js" type="text/javascript"></script> -->
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/ahmedfaid-style.css">
 
     <script>
-        // Run immediately before the body renders to prevent flicker
         (function () {
             var savedTheme = localStorage.getItem('theme') || 'dark';
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-mode');
+            } else {
+                document.documentElement.classList.remove('dark-mode');
             }
         })();
     </script>
@@ -512,7 +513,7 @@
             <div class="row">
 
                 <div class="col-lg-12 col-12">
-                    <p class="copyright-text text-center">Copyright &copy; 2025 Eng. Ahmed Osama Faid . All Rights Reserved</p>
+                    <p class="copyright-text text-center">Copyright &copy; 2026 Eng. Ahmed Osama Faid . All Rights Reserved</p>
                 </div>
 
             </div>
@@ -520,7 +521,10 @@
     </footer>
 <!-- Button to Top -->
     <!-- <button class="button-top"></button> -->
-    <button class="button-top" id="buttontop" title="Go to top"></button>
+    <!-- <button class="button-top" id="buttontop" title="Go to top"></button> -->
+    <button class="button-top" id="buttontop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
 
     <script src="js/jquery-3.3.1.min.js"></script>

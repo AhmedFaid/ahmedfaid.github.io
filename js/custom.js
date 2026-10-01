@@ -8,36 +8,31 @@
     //     $('.color-mode-icon').toggleClass('active')
     //     $('body').toggleClass('dark-mode')
     // })
-    
+
     // Function to apply theme classes
     function applyTheme(theme) {
         if (theme === 'light') {
-            $('body').removeClass('dark-mode');
+            $('html, body').removeClass('dark-mode');
             $('.color-mode-icon').removeClass('active');
         } else {
             // Default is dark
-            $('body').addClass('dark-mode');
+            $('html, body').addClass('dark-mode');
             $('.color-mode-icon').addClass('active');
         }
     }
 
-    // 1. Check preference on page load (Default to 'dark')
+    // 1. Initial theme load (runs when DOM is ready)
     var currentTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(currentTheme);
 
-    // 2. Toggle button click event
-    $('.color-mode').click(function(){
+    // 2. Toggle button handler
+    $('.color-mode').off('click').on('click', function(e) {
+        e.preventDefault();
         var isDark = $('body').hasClass('dark-mode');
+        var newTheme = isDark ? 'light' : 'dark';
         
-        if (isDark) {
-            // Switch to light
-            applyTheme('light');
-            localStorage.setItem('theme', 'light');
-        } else {
-            // Switch to dark
-            applyTheme('dark');
-            localStorage.setItem('theme', 'dark');
-        }
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     });
 
     // HEADER
@@ -70,5 +65,21 @@
 
     // TOOLTIP
     $('.social-links a').tooltip();
+
+    // BACK TO TOP BUTTON LOGIC
+    var $btnTop = $('#buttontop');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+            $btnTop.addClass('button-top-visible');
+        } else {
+            $btnTop.removeClass('button-top-visible');
+        }
+    });
+
+    $btnTop.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 600);
+    });
 
 })(jQuery);

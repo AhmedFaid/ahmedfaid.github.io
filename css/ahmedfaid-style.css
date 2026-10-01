@@ -10,7 +10,7 @@ body {
 }
 
 /* Back to top Button */
-.button-top {
+/* .button-top {
   display: inline-block;
   border: #F9A826 1px solid;
   width: 50px;
@@ -26,6 +26,13 @@ body {
   visibility: hidden;
   z-index: 1000;
 }
+/* Give it a distinct background and icon color in dark mode *******
+.dark-mode #back-to-top,
+.dark-mode .to-top,
+.dark-mode .back-top {
+  background-color: #ffc107; 
+  color: #121212 !important;
+}
 .button-top::after{
   content: "\f077";
   font-family: FontAwesome;
@@ -38,7 +45,98 @@ body {
 .button-top:hover{
   cursor: pointer;
   background-color: #333;
+} */
+/* Back to top Button */
+.button-top {
+  display: inline-block;
+  border: #F9A826 2px solid;
+  background-color: #ffffff; /* distinct background in light mode */
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99999; /* ensure it stays above all sections */
 }
+
+/* Arrow icon defaults for light mode */
+/* .button-top::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #333333; /* dark arrow in light mode *
+} */
+/* Back to top icon styling */
+.button-top i,
+.button-top svg {
+  color: #333333;
+  font-size: 1.25rem;
+  line-height: 48px;
+  vertical-align: middle;
+}
+
+.button-top:hover i,
+.button-top:hover svg {
+  color: #ffffff;
+}
+
+/* Dark mode icon color */
+.dark-mode .button-top i,
+.dark-mode .button-top svg {
+  color: #F9A826;
+}
+
+.dark-mode .button-top:hover i,
+.dark-mode .button-top:hover svg {
+  color: #212121;
+}
+
+.button-top:hover {
+  cursor: pointer;
+  background-color: #F9A826;
+}
+.button-top:hover::after {
+  color: #ffffff;
+}
+
+.button-top:active {
+  background-color: #e09218;
+}
+
+.button-top-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Back to top Button in DARK MODE (targets .button-top and #buttontop) */
+.dark-mode .button-top,
+.dark-mode #buttontop {
+  background-color: #212121;
+  border-color: #F9A826;
+}
+
+.dark-mode .button-top::after,
+.dark-mode #buttontop::after {
+  color: #F9A826; /* gold arrow in dark mode */
+}
+
+.dark-mode .button-top:hover,
+.dark-mode #buttontop:hover {
+  background-color: #F9A826;
+}
+
+.dark-mode .button-top:hover::after,
+.dark-mode #buttontop:hover::after {
+  color: #212121;
+} 
 .button-top:active{
   background-color: #555;
 }
