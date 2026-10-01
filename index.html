@@ -24,6 +24,15 @@
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/ahmedfaid-style.css">
 
+    <script>
+        // Run immediately before the body renders to prevent flicker
+        (function () {
+            var savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
 </head>
 
 <body>

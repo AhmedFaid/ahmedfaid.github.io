@@ -327,6 +327,10 @@ b, strong {
   color: #ffffff;
 }
 
+html.dark-mode,
+body.dark-mode {
+  background: #333333;
+}
 .dark-mode {
   background: #333333;
 }
