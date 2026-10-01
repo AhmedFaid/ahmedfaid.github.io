@@ -163,6 +163,30 @@ ul li {
   list-style: none;
 }
 
+/* Dark mode text colors for lists and bold labels */
+.dark-mode ul li,
+.dark-mode ol li {
+  color: #ccc; /* clean readable light gray */
+}
+
+.dark-mode ul li strong,
+.dark-mode ol li strong,
+.dark-mode strong,
+.dark-mode b {
+  color: #ffffff; /* bright white for the bold labels like Database:, Backend: */
+}
+
+/* not used the blog content */
+.dark-mode .blog-content,
+.dark-mode .blog-content p,
+.dark-mode .blog-content li {
+  color: #d1d1d1;
+}
+
+.dark-mode .blog-content strong {
+  color: #ffffff;
+}
+
 a {
   font-weight: normal;
   text-decoration: underline !important;
