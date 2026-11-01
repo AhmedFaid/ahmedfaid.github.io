@@ -82,4 +82,32 @@
         $('html, body').animate({ scrollTop: 0 }, 600);
     });
 
+    // Color Mode Toggle Fix   new code from gemini, i'll just test my code first and then compare it with gemini's code to see if it works better or not.
+// $(function () {
+//   const $colorMode = $('.color-mode');
+//   const $icon = $('.color-mode-icon');
+  
+//   // 1. Initial State Sync based on localStorage
+//   const currentTheme = localStorage.getItem('theme') || 'dark';
+//   if (currentTheme === 'dark') {
+//     $('html, body').addClass('dark-mode');
+//     $icon.addClass('active');
+//   } else {
+//     $('html, body').removeClass('dark-mode');
+//     $icon.removeClass('active');
+//   }
+
+//   // 2. Click Handler
+//   $colorMode.off('click').on('click', function () {
+//     $icon.toggleClass('active');
+//     $('html, body').toggleClass('dark-mode');
+
+//     if ($('body').hasClass('dark-mode')) {
+//       localStorage.setItem('theme', 'dark');
+//     } else {
+//       localStorage.setItem('theme', 'light');
+//     }
+//   });
+// });
+
 })(jQuery);
